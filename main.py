@@ -1,3 +1,5 @@
+import time
+
 import spellchecker
 
 sc = spellchecker.SpellChecker()
@@ -5,28 +7,31 @@ sc = spellchecker.SpellChecker()
 while(True):
     sc.printMenu()
 
-    txtIn = input()
+    num = input()
     # Add input control here!
+    #while(int(num)>4):
+        #num = input("Scegliere un'altra alternativa: \n")
 
-    if int(txtIn) == 1:
+
+    if int(num) == 1:
         print("Inserisci la tua frase in Italiano\n")
         txtIn = input()
-        sc.handleSentence(txtIn,"italian")
+        sc.handleSentence(txtIn, "Italian")
         continue
 
-    if int(txtIn) == 2:
+    if int(num) == 2:
         print("Inserisci la tua frase in Inglese\n")
         txtIn = input()
-        sc.handleSentence(txtIn,"english")
+        sc.handleSentence(txtIn,"English")
         continue
 
-    if int(txtIn) == 3:
+    if int(num) == 3:
         print("Inserisci la tua frase in Spagnolo\n")
         txtIn = input()
-        sc.handleSentence(txtIn,"spanish")
+        sc.handleSentence(txtIn,"Spanish")
         continue
 
-    if int(txtIn) == 4:
+    if int(num) == 4:
         break
 
 
