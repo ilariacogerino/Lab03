@@ -28,8 +28,11 @@ class MultiDictionary:
 
         print("______________________________")
         print(f'Using Linear search')
-        self.ricercaLineare(words, parole, tempo1)
+        tempo2 = self.ricercaLineare(words, parole, tempo1)
 
+        print("______________________________")
+        print(f'Using Dichotomic search')
+        self.ricercaLineare(words, parole, tempo2)
         pass
 
     def ricercaConContains(self, words, parole):
@@ -58,4 +61,29 @@ class MultiDictionary:
             print(p)
         tempo2 = time.process_time()
         print(f'Time elapsed {tempo2-tempo1}')
+        return tempo2
+
+    def ricercaDicotomica(self, words, parole, tempo2):
+        paroleCorrette = []
+        for word in words:
+            flag = False
+            while(flag is False):
+                half = len(parole)//2
+                if(parole[half]<word):
+                    #SIAMO NELLA PRIMA META'
+                    parole=parole[0:half]
+                if(parole[half]>word):
+                    #SIAMO NELLA SECONDA META
+                    parole=parole[half:]
+                if(parole[half]==word):
+                    flag = True
+                    paroleCorrette.append(word)
+        paroleSbagliate = []
+        for word in words:
+            if word not in paroleCorrette:
+                paroleSbagliate.append(word)
+        for p in paroleSbagliate:
+            print(p)
+        tempo3 = time.process_time()
+        print(f'Time elapsed {tempo3 - tempo2}')
         pass

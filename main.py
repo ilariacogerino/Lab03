@@ -9,8 +9,8 @@ while(True):
 
     num = input()
     # Add input control here!
-    #while(int(num)>4):
-        #num = input("Scegliere un'altra alternativa: \n")
+    while(int(num)>4):
+        num = input("Scegliere un'altra alternativa: \n")
 
 
     if int(num) == 1:
